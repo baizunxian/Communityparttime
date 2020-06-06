@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的收藏</title>
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+</head>
+<body>
+    <div class="layui-fluid" style="margin-top: 40px;">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend style="font-size: 26px">我收藏信息</legend>
+        </fieldset>
+        <table id="mycolectionlist" lay-filter="colection"></table>
+    </div>
+<script src="/static/layui/layui.js"></script>
+<script type="text/javascript">
+    layui.use(['element','table','util'], function () {
+        var element = layui.element,
+            $ = layui.jquery,
+            table = layui.table,
+            util = layui.util;
+
+        var dt = table.render({
+            elem:"#mycolectionlist",
+            url:"/mycolectionlist/",
+            page:true,
+            id: 'mycolectionlist',
+            cols:[[
+                {field: 'Jid', title: 'id', align: 'center'}
+                ,{field: 'Jobname', title: '工种', align: 'center'}
+                ,{field: 'Province_and_city', title: '省市区', align: 'center'}
+                ,{field: 'Jobloc', title: '详细工作地址', align: 'center'}
+                ,{field: 'JobSalary', title: '工资', align: 'center'}
+                ,{field: 'JobContact', title: '联系人', align: 'center'}
+                ,{field: 'Jobphonenumber', title: '联系人电话', align: 'center'}
+                ,{field: 'JobDeatails', title: '工作内容', align: 'center'}
+                ,{field: 'Jobtime', title: '发布时间', align: 'center'},
+                {field: 'JobHired', title: '是否有效', templet: Job_status, align: 'center'},
+                {fixed: 'right', title: '操作', align: 'center', toolbar:'#tools',width:180}
+            ]]
+        });
+        // 状态模板
+        function Job_status(data) {
+            var jobs_status = data.JobHired;
+            if (jobs_status === '0') {
+                return "生效";
+            }
+            if (jobs_status === '1') {
+                return "失效";
+            }
+        }
+
+        table.on('tool(colection)',function(obj){
+            var data = obj.data;
+            var layEvent = obj.event;
+            var tr = obj.tr;
+            var currPage = dt.config.page.curr;
+
+            if(layEvent === "view"){
+            	window.open("/Jobdetails/"+data.Jid)+'/';
+            }
+            if(layEvent === 'collection_job'){
+                    $.post("/collection_job/",{
+                        Jid:data.Jid,
+                        csrfmiddlewaretoken:'{{ csrf_token }}',
+                        },function(success){
+                    	if(success.code === 0){
+                    		layer.msg("取消收藏成功！",{icon:1,time:1000});
+                    		layui.table.reload('mycolectionlist',{page:{curr:$(".layui-laypage-em").next().html()}})   //这行时在当前页刷新表格的写法
+                    	}else{
+                    	    layer.msg("已取消收藏",{icon:1,time:2000});
+                        }
+                    })
+            }
+        });
+    });
+
+</script>
+<script type="text/html" id="tools">
+    <a class="layui-btn layui-btn-xs " lay-event="view">查看</a>
+    <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="collection_job">取消收藏</a>
+</script>
+</body>
+</html>

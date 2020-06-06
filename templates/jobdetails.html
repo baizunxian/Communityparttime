@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% block title %}工作详情{% endblock %}
+{% block content %}
+<div class="layui-body" id="LAY_app_body">
+<br><br><br>
+<div class="layadmin-tabsbody-item layui-show"><div class="layui-card layadmin-header">
+<div class="layui-breadcrumb" lay-filter="breadcrumb" style="visibility: visible;">
+    <input type="text" value="{{ request.session.user }}" class="uName" style="display: none">
+    <input type="text" value="{{ job_detail.Jid}}" class="JID" style="display: none">
+  </div>
+</div>
+<style>
+#LAY-component-timeline .layui-card-body{padding: 15px;}
+</style>
+<div class="layui-fluid" id="LAY-component-timeline">
+  <div class="layui-row layui-col-space15">
+    <div class="layui-col-md12">
+      <div class="layui-card">
+        <div class="layui-card-header"><h2>兼职详情</h2></div>
+        <div class="layui-card-body">
+
+            <ul class="layui-timeline">
+                <li class="layui-timeline-item">
+                  <i class="layui-icon layui-timeline-axis"></i>
+                  <div class="layui-timeline-content layui-text">
+                    <h3 class="layui-timeline-title">工作岗位</h3>
+                    <blockquote class="layui-elem-quote">{{ job_detail.Jobname }}
+                    </blockquote>
+                  </div>
+                </li>
+                <li class="layui-timeline-item">
+                  <i class="layui-icon layui-timeline-axis"></i>
+                  <div class="layui-timeline-content layui-text">
+                    <h3 class="layui-timeline-title">薪资</h3>
+                       <blockquote class="layui-elem-quote"><b style="color: coral">{{ job_detail.JobSalary }}<span>元</span></b></blockquote>
+                  </div>
+                </li>
+                <li class="layui-timeline-item">
+                  <i class="layui-icon layui-timeline-axis"></i>
+                  <div class="layui-timeline-content layui-text">
+                    <h3 class="layui-timeline-title">工作内容</h3>
+                    <blockquote class="layui-elem-quote">{{ job_detail.JobDeatails }}
+                    </blockquote>
+                  </div>
+                </li>
+                <li class="layui-timeline-item">
+                  <i class="layui-icon layui-timeline-axis"></i>
+                  <div class="layui-timeline-content layui-text">
+                    <h3 class="layui-timeline-title">工作地点</h3>
+                    <blockquote class="layui-elem-quote">
+                        {{ job_detail.Province_and_city }}/{{ job_detail.Jobloc }}
+                    </blockquote>
+                  </div>
+                </li>
+                <li class="layui-timeline-item">
+                  <i class="layui-icon layui-timeline-axis"></i>
+                  <div class="layui-timeline-content layui-text">
+                    <h3 class="layui-timeline-title">岗位发布时间</h3>
+                    <blockquote class="layui-elem-quote">{{ job_detail.Jobtime }}</blockquote>
+
+                  </div>
+                </li>
+            </ul>
+
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+    <div class="layui-row  layadmin-homepage-padding15" id="user_collection" style="text-align:center; width:100%;height:100%;margin:0px; ">
+        {% if collection_start  == '1' %}
+            <button type="button" class="layui-btn layui-btn-normal" id="collection_job" >取消收藏</button>
+        {% else %}
+            <button type="button" class="layui-btn layui-btn-normal" id="collection_job" >收藏岗位</button>
+        {% endif %}
+
+    </div>
+  </div>
+</div>
+<script src="/static/layui/layui.js"></script>
+<script>
+    layui.use(['element', 'carousel', 'layer','form'], function () {
+        var element = layui.element,
+            carousel = layui.carousel,
+            $ = layui.jquery,
+            layer = layui.layer,
+            form = layui.form;
+
+		var layer_index;
+        carousel.render({
+            elem: "#details-image",
+            width: "100%",
+            height: "400px",
+            anim: "default"
+        });
+
+        $(document).on('click','#collection_job',function(){
+        	if($(".uName").val()==""){
+        		layer.alert("您还没登录，请先登录再操作",{icon:5});
+        		return;
+        	}
+        	$.post("/collection_job/",{
+        	    Jid:$(".JID").val(),
+                csrfmiddlewaretoken:'{{ csrf_token }}'
+            },function(data){
+        		if(data.code === 0){
+        		    if (data.state === '0'){
+        		        layer.msg(data.msg,{icon:1,time:2000});
+                        let buttons = $("<button type=\"button\" class=\"layui-btn layui-btn-normal\" id=\"collection_job\" >收藏岗位</button>");
+                        $("#collection_job").remove();
+                        $("#user_collection").append(buttons);
+                        $("#colection").html(data.collection);
+                        $("#job_state").attr('value', data.state);
+                    }
+        		    else {
+        		        layer.msg(data.msg,{icon:1,time:2000});
+                        let buttons = $("<button type=\"button\" class=\"layui-btn layui-btn-normal\" id=\"collection_job\" >取消收藏</button>");
+                        $("#collection_job").remove();
+                        $("#user_collection").append(buttons);
+                        $("#colection").html(data.collection);
+                        $("#job_state").attr('value', data.state);
+                    }
+
+    			}else {
+        		    layer.alert(data.msg,{icon:1})
+                }
+        	})
+        	});
+        form.on("submit(login)",function(){
+     	   $.post("/login/",$('#login').serialize()+'&'+$.param({csrfmiddlewaretoken:'{{ csrf_token  }}'}),function (res) {
+     	   		if(res=="OK"){
+     	   			window.location.reload();
+     	   		}else{
+     	   			layer.msg("用户名或者密码错误");
+     	   		}
+     	   });
+     	  return false;
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8f818237-5ae1-4a70-9b22-e2d8d5b63ebb" name="Default Changelist" comment="">
+      <change afterPath="D:/PythonProject/Communityparttime/static/dist/css/main.css" afterDir="false" />
+      <change afterPath="D:/PythonProject/Communityparttime/static/dist/js/util/car.js" afterDir="false" />
+      <change afterPath="D:/PythonProject/Communityparttime/static/dist/js/util/mm.js" afterDir="false" />
+      <change afterPath="D:/PythonProject/Communityparttime/templates/index.html" afterDir="false" />
+      <change afterPath="D:/PythonProject/Test_flask/test_flask/app.py" afterDir="false" />
+      <change afterPath="D:/PythonProject/celery_proj/httprunner1/tasks1.py" afterDir="false" />
+      <change afterPath="D:/PythonProject/django_test/app/__init__.py" afterDir="false" />
+      <change afterPath="D:/PythonProject/django_test/app/admin.py" afterDir="false" />
+      <change afterPath="D:/PythonProject/django_test/app/apps.py" afterDir="false" />
+      <change afterPath="D:/PythonProject/django_test/app/migrations/__init__.py" afterDir="false" />
+      <change afterPath="D:/PythonProject/django_test/app/models.py" afterDir="false" />
+      <change afterPath="D:/PythonProject/django_test/app/tests.py" afterDir="false" />
+      <change afterPath="D:/PythonProject/django_test/app/views.py" afterDir="false" />
+      <change afterPath="D:/PythonProject/django_upload/.idea/django_upload.iml" afterDir="false" />
+      <change afterPath="D:/PythonProject/django_upload/app01/views.py" afterDir="false" />
+      <change afterPath="D:/PythonProject/kye_tools/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="D:/PythonProject/kye_tools/templates/add_employee_page.html" afterDir="false" />
+      <change afterPath="D:/PythonProject/kye_tools/templates/base.html" afterDir="false" />
+      <change afterPath="D:/PythonProject/kye_tools/templates/index.html" afterDir="false" />
+      <change afterPath="D:/PythonProject/my_photo/static/__init__.py" afterDir="false" />
+      <change afterPath="D:/PythonProject/renthouse/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="D:/PythonProject/renthouse1/renthouse/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vue_static/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Information_storage/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Information_storage/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mis_quay/information/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mis_quay/plan/views/plan_views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../py_script/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../py_script/mysql_pool/mysql_pool_settings.py" afterDir="false" />
+      <change afterPath="D:/pycc/day55/locustfile.py" afterDir="false" />
+      <change beforePath="D:/PythonProject/mock/.idea/mock.iml" beforeDir="false" afterPath="D:/PythonProject/mock/.idea/mock.iml" afterDir="false" />
+      <change beforePath="D:/PythonProject/mock/.idea/vcs.xml" beforeDir="false" afterPath="D:/PythonProject/mock/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="D:/PythonProject/mock/api/views.py" beforeDir="false" afterPath="D:/PythonProject/mock/api/views.py" afterDir="false" />
+      <change beforePath="D:/PythonProject/mock/mock/settings.py" beforeDir="false" afterPath="D:/PythonProject/mock/mock/settings.py" afterDir="false" />
+      <change beforePath="D:/PythonProject/mock/mock/urls.py" beforeDir="false" afterPath="D:/PythonProject/mock/mock/urls.py" afterDir="false" />
+      <change beforePath="D:/PythonProject/mock/requirements.txt" beforeDir="false" afterPath="D:/PythonProject/mock/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py脚本/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py脚本/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="D:/pycc/.idea/pycc.iml" beforeDir="false" afterPath="D:/pycc/.idea/pycc.iml" afterDir="false" />
+      <change beforePath="D:/pycc/day54/django_demo1/.idea/dataSources.local.xml" beforeDir="false" afterPath="D:/pycc/day54/django_demo1/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="D:/pycc/day54/django_demo1/.idea/workspace.xml" beforeDir="false" afterPath="D:/pycc/day54/django_demo1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="D:/untitled/.idea/untitled.iml" beforeDir="false" afterPath="D:/project/mock/.idea/mock.iml" afterDir="false" />
+      <change beforePath="D:/untitled/.idea/vcs.xml" beforeDir="false" afterPath="D:/PythonProject/kye_tools/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="D:/untitled/.idea/workspace.xml" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/adminhome.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="836">
+              <caret line="44" column="80" selection-start-line="44" selection-start-column="73" selection-end-line="44" selection-end-column="80" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/parttime/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="9063">
+              <caret line="482" selection-start-line="482" selection-end-line="482" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/addJob.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1805">
+              <caret line="95" column="30" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/updateAdminPwd.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/customer.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/admin.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/allJobsPage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="855">
+              <caret line="45" column="38" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/allPartTimeUser.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/parttime/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="6" column="44" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Communityparttime/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2109">
+              <caret line="111" column="25" selection-start-line="111" selection-start-column="25" selection-end-line="111" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>jobd</find>
+      <find>uName</find>
+      <find>jobdetails</find>
+      <find>Jobdetails</find>
+      <find>admin</find>
+      <find>HID</find>
+      <find>JobDeta</find>
+      <find>Jobdet</find>
+      <find>delet</find>
+      <find>findUserRelease</find>
+      <find>updatepwd</find>
+      <find>updatep</find>
+      <find>allPartTimeUser</find>
+      <find>admina</find>
+      <find>adminlogin</find>
+      <find>, width:100</find>
+      <find>register</find>
+      <find>toUserReleasePage</find>
+      <find>Jid</find>
+      <find>house_dict</find>
+      <find>job_dict</find>
+      <find>addJobs</find>
+      <find>add</find>
+      <find>updatejob</find>
+      <find>allJobs</find>
+      <find>updateHouse</find>
+      <find>mycolectionlist</find>
+      <find>index</find>
+      <find>operation</find>
+      <find>sign</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="D:/" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/../py脚本/test2.py" />
+        <option value="$PROJECT_DIR$/templates/404.html" />
+        <option value="$PROJECT_DIR$/Communityparttime/settings.py" />
+        <option value="$PROJECT_DIR$/templates/jobdetails.html" />
+        <option value="$PROJECT_DIR$/Communityparttime/urls.py" />
+        <option value="$PROJECT_DIR$/parttime/views.py" />
+        <option value="$PROJECT_DIR$/templates/vuetest.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1750" />
+    <option name="height" value="995" />
+  </component>
+  <component name="ProjectId" id="1ZOeWg4Eu8gayBKbVRrqsEJ1dO5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Communityparttime" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Communityparttime" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Communityparttime" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Communityparttime" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Communityparttime" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Communityparttime" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\objcet\Communityparttime\templates" />
+      <recent name="D:\objcet\Communityparttime\static\city-picker" />
+      <recent name="D:\objcet\Communityparttime\static" />
+      <recent name="C:\Users\Administrator\Desktop\Communityparttime(1)\templates" />
+      <recent name="C:\Users\Administrator\Desktop\Communityparttime(1)\static" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Django server.Communityparttime">
+    <configuration name="十库百表查询条数" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Communityparttime" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../py脚本" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../py脚本/十库百表查询条数.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Communityparttime" type="Python.DjangoServer" factoryName="Django server">
+      <module name="Communityparttime" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="Communityparttime.settings" />
+      </envs>
+      <option name="SDK_HOME" value="D:\python3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8888" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.十库百表查询条数" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8f818237-5ae1-4a70-9b22-e2d8d5b63ebb" name="Default Changelist" comment="" />
+      <created>1584600875182</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584600875182</updated>
+      <workItem from="1584600881644" duration="2754000" />
+      <workItem from="1584604816197" duration="4930000" />
+      <workItem from="1584618430852" duration="13174000" />
+      <workItem from="1584714602535" duration="29943000" />
+      <workItem from="1584935653526" duration="14429000" />
+      <workItem from="1585030467185" duration="444000" />
+      <workItem from="1585031062690" duration="256000" />
+      <workItem from="1585031341215" duration="32000" />
+      <workItem from="1585031421423" duration="19829000" />
+      <workItem from="1585192603401" duration="14362000" />
+      <workItem from="1585293685971" duration="25457000" />
+      <workItem from="1585375429239" duration="1323000" />
+      <workItem from="1585377985731" duration="48000" />
+      <workItem from="1585380287016" duration="66000" />
+      <workItem from="1585380367132" duration="3596000" />
+      <workItem from="1585722486731" duration="7604000" />
+      <workItem from="1586252460903" duration="4198000" />
+      <workItem from="1586406265768" duration="3685000" />
+      <workItem from="1586569974569" duration="593000" />
+      <workItem from="1587093561077" duration="987000" />
+      <workItem from="1587104837025" duration="4026000" />
+      <workItem from="1587697171397" duration="787000" />
+      <workItem from="1587709523857" duration="19000" />
+      <workItem from="1588762257815" duration="36000" />
+      <workItem from="1588768723332" duration="51000" />
+      <workItem from="1589443984672" duration="462000" />
+      <workItem from="1589856461376" duration="34000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="26144000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19168901" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32960895" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Communityparttime$.coverage" NAME="十库百表查询条数 Coverage Results" MODIFIED="1585277665398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../py脚本" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../py脚本/十库百表查询条数.py" />
+    <entry file="file://$PROJECT_DIR$/../py脚本/test2.py" />
+    <entry file="file://$PROJECT_DIR$/templates/404.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="15" lean-forward="true" selection-start-line="1" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python3/Lib/site-packages/django/db/models/manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="166" selection-start-line="166" selection-end-line="166" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-969">
+          <caret line="42" column="51" lean-forward="true" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
+          <folding>
+            <element signature="e#1267#1286#0#HTML" expanded="true" />
+            <element signature="e#1773#1822#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Communityparttime/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="36" column="49" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
+          <folding>
+            <element signature="e#641#673#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/jobdetails.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1919">
+          <caret line="101" column="35" selection-start-line="101" selection-start-column="21" selection-end-line="101" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/vuetest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2907">
+          <caret line="153" column="8" selection-start-line="153" selection-start-column="8" selection-end-line="173" selection-end-column="11" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#7032#7882#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/adminhome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="44" column="80" selection-start-line="44" selection-start-column="73" selection-end-line="44" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parttime/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9063">
+          <caret line="482" selection-start-line="482" selection-end-line="482" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/updateAdminPwd.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/customer.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/allPartTimeUser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parttime/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="44" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Communityparttime/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2109">
+          <caret line="111" column="25" selection-start-line="111" selection-start-column="25" selection-end-line="111" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/addJob.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1805">
+          <caret line="95" column="30" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/allJobsPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="45" column="38" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

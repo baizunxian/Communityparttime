@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        ul.pagination {
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul.pagination li {
+            display: inline;
+        }
+
+        ul.pagination li a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        ul.pagination li a.active {
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+        }
+
+        ul.pagination li a:hover:not(.active) {
+            background-color: #ddd;
+        }
+    </style>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label width_auto text-r">岗位</label>
+            <div class="layui-input-inline" style="width: 150px;">
+                <input type="text" name="job_name" id="job-name" autocomplete="off" class="layui-input"
+                       placeholder="输入岗位">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label width_auto text-r" style="margin-top:2px">省市区：</label>
+            <div class="layui-input-inline" style="width:300px">
+                <input type="text" autocomplete="on" class="layui-input" id="city-picker" name="city-picker"
+                       readonly="readonly" data-toggle="city-picker" placeholder="请选择">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <div class="layui-input-inline" style="width:300px">
+                <input type="button" class="layui-btn layui-btn-normal" id="query_job" value="查询">
+            </div>
+        </div>
+    </div>
+
+    <div style="padding: 20px; background-color: #f8f8f8;">
+        <div class="layui-row layui-col-space15" id="Jobs">
+        </div>
+    </div>
+    <script>
+        layui.config({
+            base: '/static/layui/' //静态资源所在路径
+        }).extend({
+            citypicker: '{/}/static/city-picker/city-picker' // {/}的意思即代表采用自有路径，即不跟随 base 路径
+        }).use(['jquery', 'table', 'citypicker'], function () {
+            var $ = layui.$
+                , table = layui.table
+                , form = layui.form
+                , cityPicker = layui.citypicker;
+
+            var currentPicker = new cityPicker("#city-picker", {
+                provincename: "provinceId",
+                cityname: "cityId",
+                districtname: "districtId",
+                level: 'districtId',// 级别
+            });
+            {#currentPicker.setValue("河南省/信阳市/新县");#}
+        });
+
+    </script>
+    <script>
+        layui.use(['element', 'carousel', 'layer', 'form'], function () {
+            var element = layui.element,
+                $ = layui.jquery;
+            $(function () {
+                queryAll(1, 6);
+                getPage(1, 6);
+            });
+
+            function queryAll(pageNum, pageSize) {
+                $.ajax({
+                    type: 'POST',
+                    url: "/index/", // ajax请求路径
+                    async: false,
+                    dataType: 'json',
+                    data: {
+                        "pageNum": pageNum,
+                        "pageSize": pageSize,
+                        csrfmiddlewaretoken: '{{ csrf_token }}'
+                    },
+                    success: function (data) {
+                        var res = data.data;
+                        count = data.count;
+                        $("#Jobs").children().remove();
+                        for (let i = 0; i < res.length; i++) {
+                            var div =
+                                '<div class="layui-col-md4">' +
+                                '      <div class="layui-card">\n' +
+                                '        <div class="layui-card-header" >\n' +
+                                '            <span style="font-size: 20px; ">\n' +
+                                '                <a href=' + '/' + 'Jobdetails' + '/' + res[i]["Jid"] + '><b style="color: #01AAED">' + res[i]['Jobname'] + '</b></a>\n' +
+                                '            </span>\n' +
+                                '        </div>\n' +
+                                '        <div class="layui-card-body">\n' +
+                                '            <ul>\n' +
+                                '                <li>城市：' + res[i]['Province_and_city'] + '</li><br>\n' +
+                                '                <li>位置：' + res[i]['Jobloc'] + '</li><br>\n' +
+                                '                <li>薪酬：' + res[i]['JobSalary'] + '</li><br>\n' +
+                                '                <li>发布时间：' + res[i]['Jobtime'] + '</li><br>\n' +
+                                '            </ul>\n' +
+                                '        </div>\n' +
+                                '      </div>\n' +
+                                '      </div>\n'
+                            $('#Jobs').append(div);
+                        }
+                    }
+                })
+            }
+
+            $('#query_job').click(function () {
+                var city_picker = $('#city-picker').val();
+                var job_name = $('#job-name').val();
+                var vt_id = $('.vt_id').val();
+                var b_targetType = $('.b_targetType').val();
+                $.ajax({
+                    type: 'POST',
+                    url: "/index/", // ajax请求路径
+                    async: false,
+                    dataType: 'json',
+                    data: {
+                        "pageNum": 1,
+                        "pageSize": 6,
+                        csrfmiddlewaretoken: '{{ csrf_token }}',
+                        "city_picker": city_picker,
+                        "Jobname": job_name,
+                    },
+                    success: function (data) {
+                        getPage(1, 6);
+                        var res = data.data;
+                        count = data.count;
+                        $("#Jobs").children().remove();
+                        for (let i = 0; i < res.length; i++) {
+                            var div =
+                                '<div class="layui-col-md4">' +
+                                '      <div class="layui-card">\n' +
+                                '        <div class="layui-card-header" >\n' +
+                                '            <span style="font-size: 20px; ">\n' +
+                                '                <a href=' + '/' + 'Jobdetails' + '/' + res[i]["Jid"] + '><b style="color: #01AAED">' + res[i]['Jobname'] + '</b></a>\n' +
+                                '            </span>\n' +
+                                '        </div>\n' +
+                                '        <div class="layui-card-body">\n' +
+                                '            <ul>\n' +
+                                '                <li>城市：' + res[i]['Province_and_city'] + '</li><br>\n' +
+                                '                <li>位置：' + res[i]['Jobloc'] + '</li><br>\n' +
+                                '                <li>薪酬：' + res[i]['JobSalary'] + '</li><br>\n' +
+                                '                <li>发布时间：' + res[i]['Jobtime'] + '</li><br>\n' +
+                                '            </ul>\n' +
+                                '        </div>\n' +
+                                '      </div>\n' +
+                                '      </div>\n'
+                            $('#Jobs').append(div);
+                        }
+                    }
+                })
+            });
+
+            function getPage(pageNum, pageSize) {
+                layui.use('laypage', function () {
+                    var laypage = layui.laypage;
+                    laypage.render({
+                        elem: 'page' //注意，这里的 test1 是 ID，不用加 # 号
+                        , count: count //数据总数，从服务端得到
+                        , limit: pageSize                    //每页显示条数
+                        , curr: pageNum //获取起始页
+                        //跳转页码时调用
+                        , jump: function (obj, first) { //obj为当前页的属性和方法，第一次加载first为true
+                            //非首次加载 do something
+                            if (!first) {
+                                //调用加载函数加载数据
+                                queryAll(obj.curr, obj.limit);
+                            }
+                        }
+                    });
+
+                })
+            }
+        });
+    </script>
+
+{% endblock %}

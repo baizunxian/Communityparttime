@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改岗位信息</title>
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+    <script src="/static/city-picker/city-picker.data.js"></script>
+    <link href="/static/city-picker/city-picker.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="wrapper" style="width: 900px;margin-top: 40px">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend style="font-size: 26px">修改我发布的岗位信息</legend>
+    </fieldset>
+    <input type="hidden" name="PartTimeUser" value={{ request.session.user }}>
+    <input type="hidden" name="Jid" value={{ job_info.Jid }}>
+    <form id="updatejob" class="layui-form">
+        <div class="layui-form-item">
+            <label class="layui-form-label">岗位</label>
+            <div class="layui-input-block">
+                <input type="hidden" name="PartTimeUser" value={{ request.session.loginUser }}>
+                <input type="text" name="Jobname" placeholder="请输入岗位名称" required lay-verify="required"
+                       class="layui-input" value="{{ job_info.Jobname }}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label width_auto text-r" style="margin-top:2px">省市区：</label>
+            <div class="layui-input-inline" style="width:400px">
+                <input type="text" autocomplete="on" class="layui-input" id="city-picker" name="city-picker"
+                       readonly="readonly" data-toggle="city-picker" placeholder="请选择">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">工作地址</label>
+            <div class="layui-input-block">
+                <input type="text" name="Jobloc" required lay-verify="required" placeholder="请输入工作地址"
+                       autocomplete="off" class="layui-input" value="{{ job_info.Jobloc }}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">工资</label>
+            <div class="layui-input-block">
+                <input type="number" name="JobSalary" required lay-verify="required" placeholder="请输入工资，单位默认元"
+                       autocomplete="off" class="layui-input" value="{{ job_info.JobSalary }}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">联系人</label>
+            <div class="layui-input-block">
+                <input type="text" name="JobContact" required lay-verify="required" placeholder="请输入联系人姓名"
+                       autocomplete="off" class="layui-input" value="{{ job_info.JobContact }}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">联系人号码</label>
+            <div class="layui-input-block">
+                <input type="text" name="Jobphonenumber" required lay-verify="required" placeholder="请输入联系人手机号码"
+                       autocomplete="off" class="layui-input" value="{{ job_info.Jobphonenumber }}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">工作内容</label>
+            <div class="layui-input-block">
+                <textarea type="text/plain" name="JobDeatails" required lay-verify="required" placeholder="请输入工作内容"
+                          class="layui-textarea">{{ job_info.JobDeatails }}</textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="update_job">修改</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="/static/layui/layui.js"></script>
+<script>
+    layui.config({
+        base: '/static/layui/' //静态资源所在路径
+    }).extend({
+        citypicker: '{/}/static/city-picker/city-picker' // {/}的意思即代表采用自有路径，即不跟随 base 路径
+    }).use(['jquery', 'table', 'citypicker'], function () {
+        var $ = layui.$
+            , table = layui.table
+            , form = layui.form
+            , cityPicker = layui.citypicker;
+
+        var currentPicker = new cityPicker("#city-picker", {
+            provincename: "provinceId",
+            cityname: "cityId",
+            districtname: "districtId",
+            level: 'districtId',// 级别
+        });
+        currentPicker.setValue("{{ job_info.Province_and_city }}");
+    });
+</script>
+
+<script>
+    layui.use(['element', 'form', 'layer'], function () {
+        var element = layui.element,
+            form = layui.form,
+            layer = layui.layer,
+            $ = layui.jquery;
+
+        form.on("submit(update_job)", function () {
+            $.post("/updatejob/", $("#updatejob").serialize() + '&' + $.param({
+                csrfmiddlewaretoken: '{{ csrf_token  }}',
+                Jid: {{ job_info.Jid }},
+            }), function (res) {
+                $("#updatejob")[0].reset();
+                if (res == "OK") {
+                    layer.msg("修改成功！", {
+                        time: 1000, end: function () {
+                            window.history.back(-1);
+                        }
+                    });
+                }
+            })
+            return false;
+        })
+    });
+</script>
+</body>
+</html>

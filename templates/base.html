@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}社区兼职网 {% endblock %}</title>
+    <link rel="stylesheet" href="/static/layui/css/layui.css"/>
+    <link rel="stylesheet" href="/static/css/global.css">
+    <link rel="stylesheet" href="/static/css/details.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_848666_pri5cwk3xde.css"/>
+    <script src="/static/layui/layui.js"></script>
+    <script src="/static/city-picker/city-picker.data.js"></script>
+    <link href="/static/city-picker/city-picker.css" rel="stylesheet" />
+    <style>
+    .footer{
+
+height: 100px;
+
+width: 100%;
+
+background-color: #ffffff;
+
+position: fixed;
+
+bottom: 0;
+
+}
+    </style>
+</head>
+<body>
+    <div class="layui-header title1">
+        <div class="layui-container">
+            <a href="/index"><div class="operation layui-pull-left"><i class="layui-icon layui-icon-home"></i>社区兼职服务</div></a>
+            {% if request.session.user %}
+	            <div class="personalCenter layui-pull-right"><a href="/personalcenter/" style="color:#fff"><i class="layui-icon layui-icon-tree"></i>个人中心</a></div>
+            {% else %}
+	            <div class="operation layui-pull-right" id="operation"><i class="layui-icon layui-icon-tree"></i> 登录 -  注册</div>
+            {% endif %}
+        </div>
+    </div>
+<div class="layui-container">
+    <div class="layui-tab layui-tab-brief" id="sign" lay-filter="" style="display: none;">
+        <ul class="layui-tab-title">
+            <li class="layui-this">登录</li>
+            <li>注册</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <div class="" style="margin: 40px 20px;">
+                    <form class="layui-form layui-form-pane" id="login">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">用户名</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="username" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">密码</label>
+                            <div class="layui-input-block">
+                                <input type="password" name="password" required  lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="layui-form-item">
+                            <button class="layui-btn layui-btn-fluid layui-btn-normal layui-btn-radius" lay-submit lay-filter="login">立即登录</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="layui-tab-item">
+                <div class="" style="margin: 30px 20px;">
+                    <form class="layui-form layui-form-pane form">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">用户名</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="PUsername" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">密码</label>
+                            <div class="layui-input-block">
+                                <input type="password" name="PPassword" required  lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">手机号</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="PPhoneNumber" required  lay-verify="required" placeholder="注册后不能修改" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">性别</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="PSex" required  lay-verify="required" placeholder="注册后不能修改" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">身份证号码</label>
+                            <div class="layui-input-block">
+                                <input type="number" name="PIDCard" required  lay-verify="required" placeholder="注册后不能修改" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">住址</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="PLocation" required  lay-verify="required" placeholder="注册后不能修改" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="layui-form-item">
+                        <input type="submit" class="layui-btn layui-btn-fluid layui-btn-radius layui-btn-normal regist-btn" value="立即注册" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="layui-container"><br><br><br></div>
+{#</div>#}
+{% block content %}{% endblock %}
+<footer class="footer">
+    <div id="page" style="text-align:center"></div>
+{#    <p>社区服务</p>#}
+</footer>
+<script>
+    layui.use(['element', 'carousel','layer','form'], function () {
+        var element = layui.element,
+            carousel = layui.carousel,
+            $ = layui.jquery,
+            layer = layui.layer,
+            form = layui.form;
+
+        var layer_index;
+        carousel.render({
+            elem:"#bg-item",
+            width:"100%",
+            height:"600px",
+            anim:"fade"
+        });
+        $('#operation').click(function () {
+        	layer_index = layer.open({
+                type:1,
+                content:$('#sign'),
+                area:['360px','460px'],
+                title:"社区兼职",
+                closeBtn:2
+            });
+        });
+        $('.list-item li').click(function () {
+            $('.list-item li').removeClass('click-this');
+            $(this).addClass('click-this');
+        });
+
+        $('.regist-btn').click(function () {
+        	if($("input[name='PUsername']").val()!=""&&
+                $("input[name='PPassword']").val()!=""&&
+                $("input[name='PSex']").val()!=""&&
+                $("input[name='PPhoneNumber']").val()!=""&&
+                $("input[name='PIDCard']").val()!=""&&
+                $("input[name='PLocation']").val()!=""){
+	            $.post("/register/",$('.form').serialize()+'&'+$.param({csrfmiddlewaretoken:'{{ csrf_token  }}'}),function (res) {
+	            	console.log(res)
+	                if(res=='OK'){
+	                	layer.close(layer_index);
+	                    layer.alert("注册成功",{icon:1,time:2000});
+	                    $('.form')[0].reset();
+	                }else{
+	                    layer.msg("注册失败,用户名以存在");
+	                }
+	            })
+        	}else{
+        		layer.msg("请填写所有表单");
+        	}
+        });
+
+       form.on("submit(login)",function(){
+    	   $.post("/login/",$('#login').serialize()+'&'+$.param({csrfmiddlewaretoken:'{{ csrf_token  }}'}),function (res) {
+    	   		if(res=="OK"){
+    	   			window.location.reload();
+    	   		}else{
+    	   			layer.msg("用户名或者密码错误");
+    	   		}
+    	   });
+    	  return false;
+       });
+    });
+</script>
+</body>
+</html>
